@@ -1,4 +1,5 @@
 import 'package:bank_user_component/models/user.dart';
+// import 'package:bank_user_component/widgets/custom_elevated_button.dart';
 // import 'package:bank_user_component/widgets/circular_name_icon.dart';
 // import 'package:bank_user_component/widgets/circular_select_button.dart';
 import 'package:bank_user_component/widgets/custom_list_tile.dart';
@@ -22,6 +23,8 @@ class UserList extends StatefulWidget {
 
 class _UserListState extends State<UserList> {
   int selectedIndex = -1;
+  // bool showTrailing = true;
+  // bool showLeading = true;
 
   @override
   void initState() {
@@ -34,6 +37,10 @@ class _UserListState extends State<UserList> {
       selectedIndex = index;
     });
   }
+
+  // void submit() {
+  //   /// for customElevatedButton submission
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -60,21 +67,16 @@ class _UserListState extends State<UserList> {
                 user: user,
                 index: index,
                 selectedOption: selectedOption,
+                // showTrailing: true,
+                // showLeading: false,
               );
             },
           ),
         ),
-        ElevatedButton(
-            onPressed: () {
-              ///
-            },
-            style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                backgroundColor: const Color.fromARGB(255, 122, 44, 195),
-                foregroundColor: Colors.white),
-            child: const Text('Select User')),
+        // CustomElevatedButton(
+        //   title: 'Select User',
+        //   onPressed: submit,
+        // )
       ],
     );
   }
