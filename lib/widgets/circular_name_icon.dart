@@ -15,7 +15,7 @@ class CircularNameIcon extends StatelessWidget {
   double _getSizeValue() {
     switch (size) {
       case 'low':
-        return 24;
+        return 32;
       case 'medium':
         return 48;
       case 'high':

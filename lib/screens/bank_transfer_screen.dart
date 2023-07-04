@@ -23,7 +23,11 @@ class BankTransferScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bank Transfer'),
       ),
-      body: BankTransferComponent(),
+      body: BankTransferComponent(
+        user: user,
+        banks: banks,
+        defaultBankAccount: defaultAccount,
+      ),
       // body: Row(
       //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       //   children: [
