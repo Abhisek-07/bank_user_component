@@ -1,4 +1,6 @@
+import 'package:bank_user_component/models/bank_account.dart';
 import 'package:bank_user_component/models/user.dart';
+import 'package:bank_user_component/screens/bank_transfer_screen.dart';
 // import 'package:bank_user_component/widgets/custom_elevated_button.dart';
 // import 'package:bank_user_component/widgets/circular_name_icon.dart';
 // import 'package:bank_user_component/widgets/circular_select_button.dart';
@@ -9,11 +11,13 @@ class UserList extends StatefulWidget {
   const UserList({
     super.key,
     required this.userList,
+    required this.banks,
     // required this.selectOption,
     // required this.selectedIndex
   });
 
   final List<User> userList;
+  final List<BankAccount> banks;
   // final void Function(int) selectOption;
   // final int selectedIndex;
 
@@ -32,10 +36,15 @@ class _UserListState extends State<UserList> {
     super.initState();
   }
 
-  void selectedOption(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
+  void selectedOption(User user) {
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) {
+        return BankTransferScreen(user: user, banks: widget.banks);
+      },
+    ));
+    // setState(() {
+    //   selectedIndex = index;
+    // });
   }
 
   // void submit() {

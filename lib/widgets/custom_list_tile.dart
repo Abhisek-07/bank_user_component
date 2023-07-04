@@ -17,7 +17,7 @@ class CustomListTile extends StatelessWidget {
   final bool isSelected;
   final User user;
   final int index;
-  final void Function(int) selectedOption;
+  final void Function(User) selectedOption;
   final bool showTrailing;
   final bool showLeading;
 
@@ -29,7 +29,7 @@ class CustomListTile extends StatelessWidget {
         // setState(() {
         //   selectedIndex = index;
         // });
-        selectedOption(index);
+        selectedOption(user);
         // widget.selectOption(index);
       },
       // Icon Component
